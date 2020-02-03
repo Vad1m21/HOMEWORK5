@@ -59,6 +59,7 @@ public class MessageForProgram {
         public static final String CAPACITY_OF_CAR ="Capacity of car: ";
         public static final String PASSENGERS_IN_CAR = "Passengers in the car: ";
         public static final String CURRENT_SPEED ="Current speed: ";
+        public static final String WHEELS = "Wheels: ";
 
 
 
@@ -67,6 +68,7 @@ public class MessageForProgram {
         public static final String LAUNCH_CAR_DOOR  = "Launch program' car door' ";
         public static final String LAUNCH_CAR_WHEEL = "Launch program' car wheel ' ";
         public static final String LAUNCH_CAR = "Launch program' car ' ";
+
 
 
 

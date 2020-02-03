@@ -2,19 +2,19 @@ package CarsObj.CarDoors;
 
 public class CarDoor {
     private boolean Door;
-    private boolean CarWindow;
+    private boolean Window;
 
 
 
     public CarDoor(){
       Door = false;
-      CarWindow = false;
+      Window = false;
 
     }
 
     public CarDoor(boolean door,boolean carWindow){
         this.Door = door;
-        this.CarWindow = carWindow;
+        this.Window = carWindow;
 
     }
     public boolean getDoor(){
@@ -25,55 +25,56 @@ public class CarDoor {
         this.Door = door;
     }
 
-    public boolean getCarWindow(){return CarWindow;}
+    public boolean getCarWindow(){return Window;}
 
-    public void setCarWindow(boolean carWindow){this.CarWindow = carWindow;}
+    public void setCarWindow(boolean carWindow){this.Window = carWindow;}
 
-    public boolean openDoor(boolean Door){
-        System.out.println(MessageForProgram.DOOR_IS_OPEN);
 
-        return this.Door = true;
+
+
+    public void openDoor(){
+
+       this.Door = true;
     }
-    public  boolean closeDoor(boolean Door){
-        System.out.println(MessageForProgram.DOOR_IS_CLOSE);
-        return this.Door = false;
+    public  void closeDoor(){
+
+       this.Door = false;
     }
 
-    public boolean doSomethingWithDoor(boolean Door,boolean open,boolean close){
+    public void doSomethingWithDoor(boolean Door,boolean open,boolean close){
         if(Door==close){
 
-            System.out.println(MessageForProgram.DOOR_IS_OPEN);
-            return this.Door = true;
+
+           this.Door = true;
         }
         else {
 
-            System.out.println(MessageForProgram.DOOR_IS_CLOSE);
-            return this.Door = false;
+
+          this.Door = false;
         }
 
     }
 
-    public boolean openWindow(boolean window){
-        System.out.println(MessageForProgram.WINDOW_IS_OPEN);
-        return this.CarWindow = true;
+    public void openWindow(){
+
+       this.Window = true;
     }
 
-    public boolean closeWindow(boolean window){
+    public void closeWindow(){
 
-        System.out.println(MessageForProgram.DOOR_IS_CLOSE);
-        return this.CarWindow = false;
+        this.Window = false;
     }
 
-    public boolean doSomeThingWithWindow(boolean window,boolean open,boolean close){
+    public void doSomeThingWithWindow(boolean window,boolean open,boolean close){
         if(window == close ){
 
-            System.out.println(MessageForProgram.WINDOW_IS_OPEN);
-            return this.CarWindow = true;
+
+          this.Window = true;
         }
         else{
 
-            System.out.println(MessageForProgram.WINDOW_IS_CLOSE);
-            return this.CarWindow = false;
+
+           this.Window = false;
         }
 
     }

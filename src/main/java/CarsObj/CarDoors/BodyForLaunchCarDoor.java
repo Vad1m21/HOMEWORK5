@@ -53,7 +53,7 @@ public class BodyForLaunchCarDoor {
         System.out.println();
         System.out.println(MessageForProgram.CHOOSE_PROGRAM);
         boolean check = true;
-        while (check) {
+     while (check) {
             System.out.println(MessageForProgram.LIST_OF_ACTIONS);
             String inputForChoosing = scanner.next();
             while (!inputForChoosing.matches("^[1-7]$")) {
@@ -65,23 +65,23 @@ public class BodyForLaunchCarDoor {
             byte numberForChoosingProgram = Byte.parseByte(inputForChoosing);
 
             if (numberForChoosingProgram == 1) {
-                carDoor.openDoor(carDoor.getDoor());
+                carDoor.openDoor();
 
             } else if (numberForChoosingProgram == 2){
-                carDoor.closeDoor(carDoor.getDoor());
+                carDoor.closeDoor();
             }else if(numberForChoosingProgram == 3){
                 carDoor.doSomethingWithDoor(carDoor.getDoor(),true,false);
             }else if(numberForChoosingProgram == 4){
-                carDoor.openWindow(carDoor.getCarWindow());
+                carDoor.openWindow();
             }else if(numberForChoosingProgram == 5){
-                carDoor.closeWindow(carDoor.getCarWindow());
+                carDoor.closeWindow();
             }else if(numberForChoosingProgram == 6){
                 carDoor.doSomeThingWithWindow(carDoor.getCarWindow(),true,false);
             }else if(numberForChoosingProgram == 7){
                 carDoor.returnStatus(carDoor.getDoor(),carDoor.getCarWindow());
             }
             System.out.println();
-            System.out.print(MessageForProgram.ASK_FOR_NEW_ACTIONS);
+          System.out.print(MessageForProgram.ASK_FOR_NEW_ACTIONS);
             String inputForFinish = scanner.next();
             while (!inputForFinish.matches("^[0-1]$")) {
 

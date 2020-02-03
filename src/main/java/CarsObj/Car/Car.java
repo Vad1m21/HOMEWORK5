@@ -16,9 +16,12 @@ public class Car {
     private double [] arrayWheel = new double[4];
     private  boolean []arrayDoors = new boolean[4];
     private double minValueOfTire;
+    private int wheels = arrayWheel.length;
 
-    Car(String manufacturingDate){
+
+    Car(String manufacturingDate,double maxSpeed){
         this.manufacturingDate = manufacturingDate;
+        this.maxSpeed = maxSpeed;
 
     }
 
@@ -110,30 +113,37 @@ public class Car {
     public void setMinValueOfTire(double minValueOfTire) {
         this.minValueOfTire = minValueOfTire;
     }
-
-
-
-
-
-
-    public int changeCurrentSpeed (int currentSpeed){
-
-        return this.currentSpeed = currentSpeed;
+    public int getWheels() {
+        return wheels;
     }
 
-    public int addPassenger (int passengerInTheCar){
-
-        return this.passengerInTheCar = passengerInTheCar + 1;
+    public void setWheels(int wheels) {
+        this.wheels = wheels;
     }
 
-    public int dropOffPassenger (int passengerInTheCar){
 
-        return this.passengerInTheCar = passengerInTheCar - 1;
+
+
+
+
+    public void changeCurrentSpeed (int currentSpeed){
+
+        this.currentSpeed = currentSpeed;
     }
 
-    public int dropOffAllPassenger (int passengerInTheCar){
+    public void addPassenger (int passengerInTheCar){
 
-        return this.passengerInTheCar = 0;
+         this.passengerInTheCar = passengerInTheCar + 1;
+    }
+
+    public void dropOffPassenger (int passengerInTheCar){
+
+         this.passengerInTheCar = passengerInTheCar - 1;
+    }
+
+    public void  dropOffAllPassenger (int passengerInTheCar){
+
+       this.passengerInTheCar = 0;
     }
 
     public boolean statusOfDoor (int index){
@@ -144,23 +154,23 @@ public class Car {
         return arrayWheel[index];
     }
 
-    public int takeOffAllWheels( ){
+    public void takeOffAllWheels( ){
 
-        return this.arrayWheel.length - arrayWheel.length;
+       this.wheels = 0;
     }
 
     public int installWheels(int amountOfWheels){
-        return arrayWheel.length + amountOfWheels;
+        return wheels += amountOfWheels;
     }
 
-    public double newMaxSpeed(double minValueOfWheel,double maxSpeed,int passengerInTheCar){
+    public double newMaxSpeed(double minValueOfWheel,int passengerInTheCar){
 
         if(passengerInTheCar == 0){
            return this.maxSpeed = 0.0;
 
         }
         else{
-           return this.maxSpeed = maxSpeed * minValueOfWheel;
+           return maxSpeed *= minValueOfWheel;
         }
     }
 
@@ -172,6 +182,7 @@ public class Car {
         System.out.println(MessageForProgram.CAPACITY_OF_CAR + capacityOfPassenger);
         System.out.println(MessageForProgram.PASSENGERS_IN_CAR + passengerInTheCar);
         System.out.println(MessageForProgram.CURRENT_SPEED + currentSpeed);
+        System.out.println(MessageForProgram.WHEELS + wheels);
     }
 
 

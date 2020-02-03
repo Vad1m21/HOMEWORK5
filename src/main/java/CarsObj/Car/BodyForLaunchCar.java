@@ -23,8 +23,16 @@ public class BodyForLaunchCar {
          if(condition == false){
             System.out.println(MessageForProgram.ENTER_MANUFACTURING_DATE);
             String manufacturingDate = scanner.nextLine();
+             System.out.println(MessageForProgram.ENTER_MAX_SPEED);
+             String inputMaxSpeed = scanner.next();
+             while (!inputMaxSpeed.matches("^[-+]?[0-9]?[0-9]?[0-9]*[.,]?[0-9]+(?:[eE][-+]?[0-9]+)?$")) {
+                 System.out.println(MessageForProgram.INVALID_INPUT_TRY_AGAIN);
+                 inputMaxSpeed = scanner.next();
 
-            Car car = new Car(manufacturingDate);
+             }
+             double maxSpeed = Double.parseDouble(inputMaxSpeed);
+
+            Car car = new Car(manufacturingDate,maxSpeed);
              ArraysCar arraysCar = new ArraysCar();
              double [] arrayWheel =  arraysCar.enterArrayWheel();
              for (int j = 0;j <arrayWheel.length;j++){
@@ -167,23 +175,23 @@ public class BodyForLaunchCar {
 
                   }
                   int currentSpeed = Integer.parseInt(inputForSpeed);
-                  System.out.println( car.changeCurrentSpeed(currentSpeed));
+                 car.changeCurrentSpeed(car.getCurrentSpeed());
 
               } else if (numberForChoosingProgram == 2){
-                  System.out.println(MessageForProgram.ADD_PASSENGER);
-                  System.out.println( car.addPassenger(car.getPassengerInTheCar()));
+
+                  car.addPassenger(car.getPassengerInTheCar());
 
                   }
 
               else if(numberForChoosingProgram == 3){
-                  System.out.println(MessageForProgram.DROP_ALL_PASSENGERS);
-                  System.out.println( car.dropOffAllPassenger(car.getPassengerInTheCar()));
+
+                 car.dropOffAllPassenger(car.getPassengerInTheCar());
               }else if(numberForChoosingProgram == 4){
-                  System.out.println(MessageForProgram.DROP_ONE_PASSENGER);
-                  System.out.println( car.dropOffPassenger(car.getPassengerInTheCar()));
+
+                 car.dropOffPassenger(car.getPassengerInTheCar());
               }else if(numberForChoosingProgram == 5){
                   System.out.println(MessageForProgram.TAKE_OFF_ALL_WHEELS);
-                  System.out.println(car.takeOffAllWheels());
+                 car.takeOffAllWheels();
               }else if(numberForChoosingProgram == 6){
                   System.out.println(MessageForProgram.INSTALL_WHEELS);
                   String inputForWheels = scanner.next();
@@ -221,7 +229,7 @@ public class BodyForLaunchCar {
                   System.out.println(car.statusOfDoor(doorStatusIndex));
               }else if(numberForChoosingProgram == 9){
                   System.out.println(MessageForProgram.CALCULATE_NEW_MAX_SPEED);
-                  System.out.println(car.newMaxSpeed(car.getMinValueOfTire(),car.getMaxSpeed(),car.getPassengerInTheCar()));
+                  System.out.println(car.newMaxSpeed(car.getMinValueOfTire(),car.getPassengerInTheCar()));
 
               }else if(numberForChoosingProgram == 10){
                   System.out.println(MessageForProgram.GET_STATUS_OF_CAR);
